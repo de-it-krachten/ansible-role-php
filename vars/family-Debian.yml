@@ -1,0 +1,16 @@
+---
+
+php_ini: /etc/php.ini
+
+php_socket: /var/run/php/php-fpm.sock
+
+php_packages:
+  - php
+  - php-curl
+  - php-common
+  - php-json
+  - php-xml
+  - php-fpm
+  - php-mbstring
+  - php-mysqlnd
+  - php-gmp
