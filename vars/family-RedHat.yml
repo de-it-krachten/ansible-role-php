@@ -1,9 +1,12 @@
 ---
 
+# php.ini location
 php_ini: /etc/php.ini
 
+# name of the php socket
 php_socket: /var/run/php5-fpm.sock
 
+# list of php packages
 php_packages:
   - php
   - php-common
