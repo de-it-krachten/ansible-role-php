@@ -10,7 +10,7 @@ lint: |
   ansible-lint
 platforms:
 {% for platform in MOLECULE_DISTROS %}
-  - name: vars-{{ platform.name }}
+  - name: php-{{ platform.name }}
     image: "{{ platform.image }}"
     rhsm: {{ platform.rhsm | default(False) }}
     command: ${MOLECULE_DOCKER_COMMAND:-""}
@@ -30,7 +30,7 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   inventory:
     host_vars:
-      vars-rockylinux8:
+      php-rockylinux8:
         ansible_python_interpreter: /usr/libexec/platform-python
 scenario:
   name: default

@@ -1,7 +1,7 @@
 [![CI](https://github.com/de-it-krachten/ansible-role-php/workflows/CI/badge.svg?event=push)](https://github.com/de-it-krachten/ansible-role-php/actions?query=workflow%3ACI)
 
 
-# vars
+# php
 
 Manages php
 
@@ -88,7 +88,7 @@ php_packages:
 ## Example Playbook
 ### molecule/default/converge.yml
 <pre><code>
-- name: sample playbook for role 'vars'
+- name: sample playbook for role 'php'
   hosts: all
   vars:
   tasks:
