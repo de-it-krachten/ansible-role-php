@@ -254,6 +254,7 @@ ci_templates:
   verify.yml:
     src: molecule/templates/verify.yml
     dest: molecule/default/verify.yml
+    force: false
     when: molecule_active
 #  requirements.tmpl:
 #    src: molecule/templates/requirements.tmpl
