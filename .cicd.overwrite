@@ -10,10 +10,11 @@ generic:
 # Supported platforms
 platforms:
   centos8:
-    name: CentOS 8
     ci: false
     supported: false
-    image: "geerlingguy/docker-centos8-ansible:latest"
-    galaxy:
-      name: EL
-      version: 8
+  fedora35:
+    ci: false
+    supported: false
+  fedora36:
+    ci: false
+    supported: false
