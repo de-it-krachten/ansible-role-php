@@ -43,8 +43,8 @@ platforms:
       version: 7
   centos8:
     name: CentOS 8
-    ci: true
-    supported: true
+    ci: false
+    supported: false
     image: "geerlingguy/docker-centos8-ansible:latest"
     galaxy:
       name: EL
@@ -199,6 +199,13 @@ molecule:
     playbooks: []
     vars:
       systemctl_alternative: false
+  requirements:
+    roles:
+      - epel
+      - firewall
+      - firewalld
+      - iptables
+      - ufw
 
 # templates
 ci_templates:

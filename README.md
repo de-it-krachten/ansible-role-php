@@ -5,6 +5,7 @@
 
 Manages php
 
+
 ## Platforms
 
 Supported platforms
@@ -13,7 +14,6 @@ Supported platforms
 - Red Hat Enterprise Linux 8<sup>1</sup>
 - Red Hat Enterprise Linux 9<sup>1</sup>
 - CentOS 7
-- CentOS 8
 - RockyLinux 8
 - OracleLinux 8
 - AlmaLinux 8
