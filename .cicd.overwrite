@@ -2,7 +2,19 @@
 
 # Generic
 generic:
-  role: vars
-  role_short: vars
+  role: php
+  role_short: php
   role_description: |
     Manages php
+
+# Supported platforms
+platforms:
+  centos8:
+    ci: false
+    supported: false
+  fedora35:
+    ci: false
+    supported: false
+  fedora36:
+    ci: false
+    supported: false
