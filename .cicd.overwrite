@@ -6,3 +6,14 @@ generic:
   role_short: php
   role_description: |
     Manages php
+
+# Supported platforms
+platforms:
+  centos8:
+    name: CentOS 8
+    ci: false
+    supported: false
+    image: "geerlingguy/docker-centos8-ansible:latest"
+    galaxy:
+      name: EL
+      version: 8
