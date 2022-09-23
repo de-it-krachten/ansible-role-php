@@ -20,9 +20,14 @@
     disable_gpg_check: yes
   when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora'
 
-- name: Install all php packages
+- name: Install default php packages
   package:
     name: "{{ php_packages }}"
+    state: present
+
+- name: Install additional php packages
+  package:
+    name: "{{ php_packages_additional }}"
     state: present
 
 - name: Search for all php.ini

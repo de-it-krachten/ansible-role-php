@@ -9,7 +9,7 @@ php_release: php74
 # php.ini location
 php_ini: /etc/php.ini
 
-# list of php packages
+# Default PHP packages
 php_packages:
   - php
   - php-common
@@ -20,3 +20,6 @@ php_packages:
   - php-mbstring
   - php-mysqlnd
   - php-xml
+
+# Additional PHP packages
+php_packages_additional: []
