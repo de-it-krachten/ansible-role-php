@@ -5,3 +5,18 @@ php_version: 7.4
 
 # php release
 php_release: php74
+
+# php.ini location
+php_ini: /etc/php.ini
+
+# list of php packages
+php_packages:
+  - php
+  - php-common
+  - php-curl
+  - php-fpm
+  - php-gmp
+  - php-json
+  - php-mbstring
+  - php-mysqlnd
+  - php-xml
