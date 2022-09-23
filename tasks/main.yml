@@ -25,6 +25,11 @@
     name: "{{ php_packages }}"
     state: present
 
+- name: Install OS specific php packages
+  package:
+    name: "{{ php_packages_os }}"
+    state: present
+
 - name: Install additional php packages
   package:
     name: "{{ php_packages_additional }}"

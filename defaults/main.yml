@@ -15,11 +15,14 @@ php_packages:
   - php-common
   - php-curl
   - php-fpm
+  - php-gd
   - php-gmp
+  - php-intl
   - php-json
   - php-mbstring
   - php-mysqlnd
   - php-xml
+  - php-zip
 
 # Additional PHP packages
 php_packages_additional: []

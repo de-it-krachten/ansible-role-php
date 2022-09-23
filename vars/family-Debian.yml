@@ -2,3 +2,7 @@
 
 # name of the php socket
 php_socket: /var/run/php/php-fpm.sock
+
+# OS specific packages
+php_packages_os:
+  - libapache2-mod-php
