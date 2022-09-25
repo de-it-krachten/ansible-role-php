@@ -36,50 +36,33 @@ php_version: 7.4
 
 # php release
 php_release: php74
+
+# php.ini location
+php_ini: /etc/php.ini
+
+# list of php packages
+php_packages:
+  - php
+  - php-common
+  - php-curl
+  - php-fpm
+  - php-gmp
+  - php-json
+  - php-mbstring
+  - php-mysqlnd
+  - php-xml
 </pre></code>
 
 ### vars/family-RedHat.yml
 <pre><code>
-# php.ini location
-php_ini: /etc/php.ini
-
 # name of the php socket
 php_socket: /var/run/php5-fpm.sock
-
-# list of php packages
-php_packages:
-  - php
-  - php-common
-  - php-json
-  - php-xml
-  - php-fpm
-  - php-mbstring
-  # - php-imap
-  # - php-pear-DB
-  - php-mysqlnd
-  - php-gmp
-  # - php-intl
 </pre></code>
 
 ### vars/family-Debian.yml
 <pre><code>
-# php.ini location
-php_ini: /etc/php.ini
-
 # name of the php socket
 php_socket: /var/run/php/php-fpm.sock
-
-# list of php packages
-php_packages:
-  - php
-  - php-curl
-  - php-common
-  - php-json
-  - php-xml
-  - php-fpm
-  - php-mbstring
-  - php-mysqlnd
-  - php-gmp
 </pre></code>
 
 
