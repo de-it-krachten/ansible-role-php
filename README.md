@@ -40,29 +40,43 @@ php_release: php74
 # php.ini location
 php_ini: /etc/php.ini
 
-# list of php packages
+# Default PHP packages
 php_packages:
   - php
   - php-common
   - php-curl
   - php-fpm
+  - php-gd
   - php-gmp
+  - php-intl
   - php-json
   - php-mbstring
   - php-mysqlnd
   - php-xml
+  - php-zip
+
+# Additional PHP packages
+php_packages_additional: []
 </pre></code>
+
 
 ### vars/family-RedHat.yml
 <pre><code>
 # name of the php socket
 php_socket: /var/run/php5-fpm.sock
+
+# OS specific packages
+php_packages_os: []
 </pre></code>
 
 ### vars/family-Debian.yml
 <pre><code>
 # name of the php socket
 php_socket: /var/run/php/php-fpm.sock
+
+# OS specific packages
+php_packages_os:
+  - libapache2-mod-php
 </pre></code>
 
 

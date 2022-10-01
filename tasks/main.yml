@@ -14,6 +14,9 @@
         - "vars"
 
 - name: RedHat family remi repository
+  when:
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution != 'Fedora'
   block:
 
     - name: Define module name
@@ -26,9 +29,11 @@
         state: present
         disable_gpg_check: yes
 
-  when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora'
-
 - name: RedHat family remi repository (>=8)
+  when:
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution != 'Fedora'
+    - ansible_distribution_major_version|int >= 8
   block:
 
     - name: Get php module
@@ -45,8 +50,6 @@
       command: dnf module enable php:{{ php_module }} -y
       changed_when: true
       when: php_module not in _php.stdout
-
-  when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora' and ansible_distribution_major_version|int >= 8
 
 - name: Install default php packages
   package:
