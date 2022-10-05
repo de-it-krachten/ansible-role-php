@@ -75,20 +75,32 @@ php_ini_settings:
 ### vars/family-RedHat.yml
 <pre><code>
 # name of the php socket
-php_socket: /var/run/php5-fpm.sock
+php_socket: /var/run/php-fpm/www.sock
 
 # OS specific packages
 php_packages_os: []
+
+# php-fpm service
+php_fpm_service: "php-fpm"
+
+# apache service
+php_apache_service: httpd
 </pre></code>
 
 ### vars/family-Debian.yml
 <pre><code>
 # name of the php socket
-php_socket: /var/run/php/php-fpm.sock
+php_socket: /run/php/php{{ php_version }}-fpm.sock
 
 # OS specific packages
 php_packages_os:
   - libapache2-mod-php
+
+# php-fpm service
+php_fpm_service: "php{{ php_version }}-fpm"
+
+# apache service
+php_apache_service: apache2
 </pre></code>
 
 
@@ -101,6 +113,6 @@ php_packages_os:
   become: "{{ molecule['converge']['become'] | default('yes') }}"
   tasks:
     - name: Include role 'php'
-      include_role:
+      ansible.builtin.include_role:
         name: php
 </pre></code>

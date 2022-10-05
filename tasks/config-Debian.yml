@@ -1,0 +1,54 @@
+---
+
+- name: Test for existance of cli/php.ini
+  ansible.builtin.stat:
+    path: /etc/php/{{ php_version }}/cli/php.ini
+  register: _php_cli
+
+- name: Edit cli/php.ini
+  ansible.builtin.replace:
+    path: /etc/php/{{ php_version }}/cli/php.ini
+    regexp: '^(;)?{{ setting.key }}(\s)?=.*'
+    replace: '{{ setting.key }} = {{ setting.value }}'
+  loop: "{{ php_ini_settings | dict2items }}"
+  loop_control:
+    loop_var: setting
+    label:
+      - "{{ setting.key }} = {{ setting.value }}"
+  when: _php_cli.stat.exists
+
+- name: Test for existance of apache2/php.ini
+  ansible.builtin.stat:
+    path: /etc/php/{{ php_version }}/apache2/php.ini
+  register: _php_apache
+
+- name: Edit apache2/php.ini
+  ansible.builtin.replace:
+    path: /etc/php/{{ php_version }}/apache2/php.ini
+    regexp: '^(;)?{{ setting.key }}(\s)?=.*'
+    replace: '{{ setting.key }} = {{ setting.value }}'
+  loop: "{{ php_ini_settings | dict2items }}"
+  loop_control:
+    loop_var: setting
+    label:
+      - "{{ setting.key }} = {{ setting.value }}"
+  notify: Restart apache
+  when: _php_apache.stat.exists
+
+- name: Test for existance of fpm/php.ini
+  ansible.builtin.stat:
+    path: /etc/php/{{ php_version }}/fpm/php.ini
+  register: _php_fpm
+
+- name: Edit fpm/php.ini
+  ansible.builtin.replace:
+    path: /etc/php/{{ php_version }}/fpm/php.ini
+    regexp: '^(;)?{{ setting.key }}(\s)?=.*'
+    replace: '{{ setting.key }} = {{ setting.value }}'
+  loop: "{{ php_ini_settings | dict2items }}"
+  loop_control:
+    loop_var: setting
+    label:
+      - "{{ setting.key }} = {{ setting.value }}"
+  notify: Restart fpm
+  when: _php_fpm.stat.exists
