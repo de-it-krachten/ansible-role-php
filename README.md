@@ -6,6 +6,15 @@
 Manages php
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+None
+
 ## Platforms
 
 Supported platforms
@@ -37,9 +46,6 @@ php_version: 7.4
 # php release
 php_release: php74
 
-# php.ini location
-php_ini: /etc/php.ini
-
 # Default PHP packages
 php_packages:
   - php
@@ -57,26 +63,44 @@ php_packages:
 
 # Additional PHP packages
 php_packages_additional: []
+
+# Settings to configure in /etc/php.ini
+php_ini_settings:
+  date.timezone: Europe/Amsterdam
+  post_max_size: 25M
+  upload_max_filesize: 25M
 </pre></code>
 
 
 ### vars/family-RedHat.yml
 <pre><code>
 # name of the php socket
-php_socket: /var/run/php5-fpm.sock
+php_socket: /var/run/php-fpm/www.sock
 
 # OS specific packages
 php_packages_os: []
+
+# php-fpm service
+php_fpm_service: "php-fpm"
+
+# apache service
+php_apache_service: httpd
 </pre></code>
 
 ### vars/family-Debian.yml
 <pre><code>
 # name of the php socket
-php_socket: /var/run/php/php-fpm.sock
+php_socket: /run/php/php{{ php_version }}-fpm.sock
 
 # OS specific packages
 php_packages_os:
   - libapache2-mod-php
+
+# php-fpm service
+php_fpm_service: "php{{ php_version }}-fpm"
+
+# apache service
+php_apache_service: apache2
 </pre></code>
 
 
@@ -89,6 +113,6 @@ php_packages_os:
   become: "{{ molecule['converge']['become'] | default('yes') }}"
   tasks:
     - name: Include role 'php'
-      include_role:
+      ansible.builtin.include_role:
         name: php
 </pre></code>

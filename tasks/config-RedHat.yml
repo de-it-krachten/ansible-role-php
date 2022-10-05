@@ -1,0 +1,15 @@
+---
+
+- name: Edit /etc/php.ini
+  ansible.builtin.replace:
+    path: /etc/php.ini
+    regexp: '^(;)?{{ setting.key }}(\s)?=.*'
+    replace: '{{ setting.key }} = {{ setting.value }}'
+  loop: "{{ php_ini_settings | dict2items }}"
+  loop_control:
+    loop_var: setting
+    label:
+      - "{{ setting.key }} = {{ setting.value }}"
+  notify:
+    - Restart apache
+    - Restart fpm
