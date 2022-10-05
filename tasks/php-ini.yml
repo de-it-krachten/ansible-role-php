@@ -1,0 +1,12 @@
+---
+
+- name: Set all required php settings on {{ php_ini_file }}
+  replace:
+    path: "{{ php_ini_file }}"
+    regexp: '^(;)?{{ setting.key }}(\s)?=.*'
+    replace: '{{ setting.key }} = {{ setting.value}}'
+  loop: "{{ php_ini_settings | dict2items }}"
+  loop_control:
+    loop_var: setting
+    label:
+      - "{{ setting.key }} = {{ setting.value }}"

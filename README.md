@@ -6,6 +6,15 @@
 Manages php
 
 
+
+## Dependencies
+
+#### Roles
+None
+
+#### Collections
+None
+
 ## Platforms
 
 Supported platforms
@@ -37,9 +46,6 @@ php_version: 7.4
 # php release
 php_release: php74
 
-# php.ini location
-php_ini: /etc/php.ini
-
 # Default PHP packages
 php_packages:
   - php
@@ -57,6 +63,12 @@ php_packages:
 
 # Additional PHP packages
 php_packages_additional: []
+
+# Settings to configure in /etc/php.ini
+php_ini_settings:
+  date.timezone: Europe/Amsterdam
+  post_max_size: 25M
+  upload_max_filesize: 25M
 </pre></code>
 
 

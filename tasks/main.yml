@@ -73,11 +73,11 @@
     recurse: true
   register: _php_ini
 
-- name: Set the correct timezone
-  replace:
-    path: "{{ item.path }}"
-    regexp: '^(;)?date.timezone =.*'
-    replace: 'date.timezone = Europe/Amsterdam'
+- name: Edit all php.ini files
+  include_tasks: php-ini.yml
+  vars:
+    php_ini_file: "{{ item.path }}"
   loop: "{{ _php_ini.files }}"
   loop_control:
-    label: "{{ item.path }}"
+    label:
+      - "{{ item.path }}"
