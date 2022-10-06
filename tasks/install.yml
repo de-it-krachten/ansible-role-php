@@ -1,0 +1,54 @@
+---
+
+- name: RedHat family remi repository
+  when:
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution != 'Fedora'
+  block:
+
+    - name: Define module name
+      ansible.builtin.set_fact:
+        php_module: "remi-{{ php_version }}"
+
+    - name: Install RPM w/ all remi repositories
+      ansible.builtin.yum:
+        name: https://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm
+        state: present
+        disable_gpg_check: yes
+
+- name: RedHat family remi repository (>=8)
+  when:
+    - ansible_os_family == 'RedHat'
+    - ansible_distribution != 'Fedora'
+    - ansible_distribution_major_version|int >= 8
+  block:
+
+    - name: Get php module
+      ansible.builtin.command: dnf module list -y --enabled
+      changed_when: false
+      register: _php
+
+    - name: Reset php module
+      ansible.builtin.command: dnf module reset php -y
+      changed_when: true
+      when: php_module not in _php.stdout
+
+    - name: Activate php module
+      ansible.builtin.command: dnf module enable php:{{ php_module }} -y
+      changed_when: true
+      when: php_module not in _php.stdout
+
+- name: Install default php packages
+  ansible.builtin.package:
+    name: "{{ php_packages }}"
+    state: present
+
+- name: Install OS specific php packages
+  ansible.builtin.package:
+    name: "{{ php_packages_os }}"
+    state: present
+
+- name: Install additional php packages
+  ansible.builtin.package:
+    name: "{{ php_packages_additional }}"
+    state: present

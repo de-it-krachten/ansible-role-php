@@ -1,7 +1,7 @@
 ---
 
 - name: Load variables based on OS type
-  include_vars: "{{ lookup('first_found', params) }}"
+  ansible.builtin.include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
       files:
@@ -13,68 +13,13 @@
       paths:
         - "vars"
 
-- name: RedHat family remi repository
-  block:
+# Install phase
+- name: Install phase
+  ansible.builtin.include_tasks:
+    file: install.yml
 
-    - name: Define module name
-      set_fact:
-        php_module: "remi-{{ php_version }}"
+# Config phase
+- name: Configursation phase
+  ansible.builtin.include_tasks:
+    file: config-{{ ansible_os_family }}.yml
 
-    - name: Install RPM w/ all remi repositories
-      yum:
-        name: https://rpms.remirepo.net/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm
-        state: present
-        disable_gpg_check: yes
-
-  when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora'
-
-- name: RedHat family remi repository (>=8)
-  block:
-
-    - name: Get php module
-      command: dnf module list -y --enabled
-      changed_when: false
-      register: _php
-
-    - name: Reset php module
-      command: dnf module reset php -y
-      changed_when: true
-      when: php_module not in _php.stdout
-
-    - name: Activate php module
-      command: dnf module enable php:{{ php_module }} -y
-      changed_when: true
-      when: php_module not in _php.stdout
-
-  when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora' and ansible_distribution_major_version|int >= 8
-
-- name: Install default php packages
-  package:
-    name: "{{ php_packages }}"
-    state: present
-
-- name: Install OS specific php packages
-  package:
-    name: "{{ php_packages_os }}"
-    state: present
-
-- name: Install additional php packages
-  package:
-    name: "{{ php_packages_additional }}"
-    state: present
-
-- name: Search for all php.ini
-  find:
-    paths: /etc
-    pattern: php.ini
-    recurse: true
-  register: _php_ini
-
-- name: Set the correct timezone
-  replace:
-    path: "{{ item.path }}"
-    regexp: '^(;)?date.timezone =.*'
-    replace: 'date.timezone = Europe/Amsterdam'
-  loop: "{{ _php_ini.files }}"
-  loop_control:
-    label: "{{ item.path }}"
