@@ -13,7 +13,7 @@ Manages php
 None
 
 #### Collections
-None
+- ansible.posix
 
 ## Platforms
 
