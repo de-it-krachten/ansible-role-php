@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.1.1...v1.2.0) (2022-10-06)
+
+
+### Bug Fixes
+
+* Fix linting issues ([fabd20c](https://github.com/de-it-krachten/ansible-role-php/commit/fabd20c78a430db911285086112d5dbeb70fd73c))
+
+
+### Features
+
+* Add dict 'php_ini_settings' of configurable php settings ([93be8cf](https://github.com/de-it-krachten/ansible-role-php/commit/93be8cf1a5cca77ddc18b7a731c41f8693eb05ef))
+* Migrate to FQCN ([8c26bdb](https://github.com/de-it-krachten/ansible-role-php/commit/8c26bdbc0f394712f3d5feea934b740e5f6bad66))
+
 ## [1.1.1](https://github.com/de-it-krachten/ansible-role-php/compare/v1.1.0...v1.1.1) (2022-09-25)
 
 
