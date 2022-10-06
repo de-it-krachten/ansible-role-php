@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/de-it-krachten/ansible-role-php/compare/v1.2.0...v1.2.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* Update README with collection dependencies ([58039f7](https://github.com/de-it-krachten/ansible-role-php/commit/58039f74557a2cc293a65674729d3aad017f23e9))
+
 # [1.2.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.1.1...v1.2.0) (2022-10-06)
 
 
