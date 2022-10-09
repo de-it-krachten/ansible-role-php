@@ -13,7 +13,7 @@ Manages php
 None
 
 #### Collections
-- collections
+- community.general
 
 ## Platforms
 
