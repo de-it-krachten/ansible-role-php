@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.2.1...v1.3.0) (2022-10-12)
+
+
+### Features
+
+* Move to FQCN ([71b1a6d](https://github.com/de-it-krachten/ansible-role-php/commit/71b1a6dff6a4d03f37a06c162f52f94e0c648059))
+* Update CI to latest standards ([ba0e2fc](https://github.com/de-it-krachten/ansible-role-php/commit/ba0e2fc114e64c71a0ed824c136cceec0a552099))
+
 ## [1.2.1](https://github.com/de-it-krachten/ansible-role-php/compare/v1.2.0...v1.2.1) (2022-10-06)
 
 
