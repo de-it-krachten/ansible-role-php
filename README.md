@@ -26,6 +26,7 @@ Supported platforms
 - RockyLinux 8
 - RockyLinux 9
 - OracleLinux 8
+- OracleLinux 9
 - AlmaLinux 8
 - AlmaLinux 9
 - Debian 10 (Buster)
@@ -71,8 +72,7 @@ php_ini_settings:
   upload_max_filesize: 25M
 </pre></code>
 
-
-### vars/family-RedHat.yml
+### defaults/family-RedHat.yml
 <pre><code>
 # name of the php socket
 php_socket: /var/run/php-fpm/www.sock
@@ -87,7 +87,7 @@ php_fpm_service: "php-fpm"
 php_apache_service: httpd
 </pre></code>
 
-### vars/family-Debian.yml
+### defaults/family-Debian.yml
 <pre><code>
 # name of the php socket
 php_socket: /run/php/php{{ php_version }}-fpm.sock
@@ -105,12 +105,22 @@ php_apache_service: apache2
 
 
 
+
 ## Example Playbook
 ### molecule/default/converge.yml
 <pre><code>
 - name: sample playbook for role 'php'
   hosts: all
-  become: "{{ molecule['converge']['become'] | default('yes') }}"
+  become: "yes"
+  vars:
+    openssl_fqdn: server.example.com
+    apache_fqdn: server.example.com
+    apache_ssl_key: "{{ openssl_server_key }}"
+    apache_ssl_crt: "{{ openssl_server_crt }}"
+    apache_ssl_chain: "{{ openssl_server_crt }}"
+  roles:
+    - deitkrachten.openssl
+    - deitkrachten.apache
   tasks:
     - name: Include role 'php'
       ansible.builtin.include_role:

@@ -2,7 +2,16 @@
 
 - name: Converge
   hosts: all
-  become: "{{ molecule['converge']['become'] | default('yes') }}"
+  become: "yes"
+  vars:
+    openssl_fqdn: server.example.com
+    apache_fqdn: server.example.com
+    apache_ssl_key: "{{ openssl_server_key }}"
+    apache_ssl_crt: "{{ openssl_server_crt }}"
+    apache_ssl_chain: "{{ openssl_server_crt }}"
+  roles:
+    - deitkrachten.openssl
+    - deitkrachten.apache
   tasks:
     - name: Include role 'ansible-role-php'
       ansible.builtin.include_role:
