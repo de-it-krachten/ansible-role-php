@@ -72,21 +72,6 @@ php_ini_settings:
   upload_max_filesize: 25M
 </pre></code>
 
-### defaults/family-RedHat.yml
-<pre><code>
-# name of the php socket
-php_socket: /var/run/php-fpm/www.sock
-
-# OS specific packages
-php_packages_os: []
-
-# php-fpm service
-php_fpm_service: "php-fpm"
-
-# apache service
-php_apache_service: httpd
-</pre></code>
-
 ### defaults/family-Debian.yml
 <pre><code>
 # name of the php socket
@@ -101,6 +86,21 @@ php_fpm_service: "php{{ php_version }}-fpm"
 
 # apache service
 php_apache_service: apache2
+</pre></code>
+
+### defaults/family-RedHat.yml
+<pre><code>
+# name of the php socket
+php_socket: /var/run/php-fpm/www.sock
+
+# OS specific packages
+php_packages_os: []
+
+# php-fpm service
+php_fpm_service: "php-fpm"
+
+# apache service
+php_apache_service: httpd
 </pre></code>
 
 
