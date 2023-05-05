@@ -12,9 +12,25 @@ platforms:
   centos8:
     ci: false
     supported: false
-  fedora35:
-    ci: false
-    supported: false
   fedora36:
     ci: false
     supported: false
+  fedora37:
+    ci: false
+    supported: false
+
+molecule:
+  requirements:
+    roles_extra:
+      - deitkrachten.apache
+      - deitkrachten.openssl
+  converge:
+    roles:
+      - deitkrachten.openssl
+      - deitkrachten.apache
+    vars:
+      openssl_fqdn: server.example.com
+      apache_fqdn: server.example.com
+      apache_ssl_key: "{{ openssl_server_key }}"
+      apache_ssl_crt: "{{ openssl_server_crt }}"
+      apache_ssl_chain: "{{ openssl_server_crt }}"
