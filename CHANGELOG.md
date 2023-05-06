@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.3.0...v1.4.0) (2023-05-06)
+
+
+### Features
+
+* Move defaults into new format w/ wrapper ([6905726](https://github.com/de-it-krachten/ansible-role-php/commit/69057261cd69e1c312b9d52e0cac534a8b1a1530))
+
 # [1.3.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.2.1...v1.3.0) (2022-10-12)
 
 
