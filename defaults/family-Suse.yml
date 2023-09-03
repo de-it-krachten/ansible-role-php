@@ -1,0 +1,13 @@
+---
+
+# name of the php socket
+php_socket: /var/run/php-fpm/www.sock
+
+# OS specific packages
+php_packages_os: []
+
+# php-fpm service
+php_fpm_service: "php-fpm"
+
+# apache service
+php_apache_service: httpd

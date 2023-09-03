@@ -12,7 +12,13 @@ platforms:
   centos8:
     ci: false
     supported: false
-  fedora38:
+  opensuse15:
+    ci: false
+    supported: false
+  sles15:
+    ci: false
+    supported: false
+  fedora37:
     ci: false
     supported: false
   fedora38:
