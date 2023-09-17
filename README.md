@@ -29,9 +29,9 @@ Supported platforms
 - OracleLinux 9
 - AlmaLinux 8
 - AlmaLinux 9
-- Debian 10 (Buster)
+- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
-- Ubuntu 18.04 LTS
+- Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
 
@@ -86,6 +86,21 @@ php_fpm_service: "php{{ php_version }}-fpm"
 
 # apache service
 php_apache_service: apache2
+</pre></code>
+
+### defaults/family-Suse.yml
+<pre><code>
+# name of the php socket
+php_socket: /var/run/php-fpm/www.sock
+
+# OS specific packages
+php_packages_os: []
+
+# php-fpm service
+php_fpm_service: "php-fpm"
+
+# apache service
+php_apache_service: httpd
 </pre></code>
 
 ### defaults/family-RedHat.yml
