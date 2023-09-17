@@ -1,3 +1,16 @@
+# [1.5.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.4.0...v1.5.0) (2023-09-17)
+
+
+### Bug Fixes
+
+* Fix loop label to string ([d4786c4](https://github.com/de-it-krachten/ansible-role-php/commit/d4786c4924ae0eda04d0fe6353baf5c24eebc14e))
+* Move defaults back tp old set-up ([0ecbf39](https://github.com/de-it-krachten/ansible-role-php/commit/0ecbf39e855530bc6038f0a4e0404fa11c011948))
+
+
+### Features
+
+* Update supported platforms & CI ([37bef7f](https://github.com/de-it-krachten/ansible-role-php/commit/37bef7f14cf92dd436abf8df973ab517ba1e6d0f))
+
 # [1.4.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.3.0...v1.4.0) (2023-05-06)
 
 
