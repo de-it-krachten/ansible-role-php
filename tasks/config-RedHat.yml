@@ -8,8 +8,7 @@
   loop: "{{ php_ini_settings | dict2items }}"
   loop_control:
     loop_var: setting
-    label:
-      - "{{ setting.key }} = {{ setting.value }}"
+    label: "{{ setting.key }} = {{ setting.value }}"
   notify:
     - Restart apache
     - Restart fpm

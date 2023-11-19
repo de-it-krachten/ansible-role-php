@@ -13,8 +13,7 @@
   loop: "{{ php_ini_settings | dict2items }}"
   loop_control:
     loop_var: setting
-    label:
-      - "{{ setting.key }} = {{ setting.value }}"
+    label: "{{ setting.key }} = {{ setting.value }}"
   when: _php_cli.stat.exists
 
 - name: Test for existance of apache2/php.ini
@@ -30,8 +29,7 @@
   loop: "{{ php_ini_settings | dict2items }}"
   loop_control:
     loop_var: setting
-    label:
-      - "{{ setting.key }} = {{ setting.value }}"
+    label: "{{ setting.key }} = {{ setting.value }}"
   notify: Restart apache
   when: _php_apache.stat.exists
 
@@ -48,7 +46,6 @@
   loop: "{{ php_ini_settings | dict2items }}"
   loop_control:
     loop_var: setting
-    label:
-      - "{{ setting.key }} = {{ setting.value }}"
+    label: "{{ setting.key }} = {{ setting.value }}"
   notify: Restart fpm
   when: _php_fpm.stat.exists
