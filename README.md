@@ -13,7 +13,6 @@ Manages php
 None
 
 #### Collections
-- community.general
 
 ## Platforms
 
@@ -29,7 +28,6 @@ Supported platforms
 - OracleLinux 9
 - AlmaLinux 8
 - AlmaLinux 9
-- Debian 10 (Buster)<sup>1</sup>
 - Debian 11 (Bullseye)
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
@@ -126,13 +124,13 @@ php_apache_service: httpd
 <pre><code>
 - name: sample playbook for role 'php'
   hosts: all
-  become: "yes"
+  become: 'yes'
   vars:
     openssl_fqdn: server.example.com
     apache_fqdn: server.example.com
-    apache_ssl_key: "{{ openssl_server_key }}"
-    apache_ssl_crt: "{{ openssl_server_crt }}"
-    apache_ssl_chain: "{{ openssl_server_crt }}"
+    apache_ssl_key: '{{ openssl_server_key }}'
+    apache_ssl_crt: '{{ openssl_server_crt }}'
+    apache_ssl_chain: '{{ openssl_server_crt }}'
   roles:
     - deitkrachten.openssl
     - deitkrachten.apache
