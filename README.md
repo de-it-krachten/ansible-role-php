@@ -13,6 +13,7 @@ Manages php
 None
 
 #### Collections
+None
 
 ## Platforms
 
@@ -32,6 +33,7 @@ Supported platforms
 - Debian 12 (Bookworm)
 - Ubuntu 20.04 LTS
 - Ubuntu 22.04 LTS
+- Ubuntu 24.04 LTS
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
@@ -86,7 +88,7 @@ php_fpm_service: "php{{ php_version }}-fpm"
 php_apache_service: apache2
 </pre></code>
 
-### defaults/family-Suse.yml
+### defaults/family-RedHat.yml
 <pre><code>
 # name of the php socket
 php_socket: /var/run/php-fpm/www.sock
@@ -101,7 +103,7 @@ php_fpm_service: "php-fpm"
 php_apache_service: httpd
 </pre></code>
 
-### defaults/family-RedHat.yml
+### defaults/family-Suse.yml
 <pre><code>
 # name of the php socket
 php_socket: /var/run/php-fpm/www.sock
