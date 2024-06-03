@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.5.0...v1.6.0) (2024-06-03)
+
+
+### Bug Fixes
+
+* Change loop/label for latest ansible ([fc1a8a0](https://github.com/de-it-krachten/ansible-role-php/commit/fc1a8a0604382ee9aecf78ac4c33403d7cf03ec6))
+
+
+### Features
+
+* Add support for Ubuntu 24.04 LTS + Fedora 40 ([5013a84](https://github.com/de-it-krachten/ansible-role-php/commit/5013a8427532af831ee291b67098f1e2b2960764))
+
 # [1.5.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.4.0...v1.5.0) (2023-09-17)
 
 
