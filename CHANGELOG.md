@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.6.0...v1.7.0) (2024-12-29)
+
+
+### Features
+
+* Update supported platforms & CI ([bb275f1](https://github.com/de-it-krachten/ansible-role-php/commit/bb275f14f8eeaa7e5fa0f6211aafddb2a116c791))
+
 # [1.6.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.5.0...v1.6.0) (2024-06-03)
 
 
