@@ -1,3 +1,14 @@
+# [1.8.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.7.0...v1.8.0) (2025-08-07)
+
+
+### Features
+
+* Add support for AlmaLinux 10 ([ba29043](https://github.com/de-it-krachten/ansible-role-php/commit/ba290430d6afd3f3709998aadccca931f5b5f769))
+* Add support for Debian 13 (Trixie) ([b135de8](https://github.com/de-it-krachten/ansible-role-php/commit/b135de8f9899a98d5ca8431d31fd7e61440357d5))
+* Add support for OracleLinux 10 ([e5e5126](https://github.com/de-it-krachten/ansible-role-php/commit/e5e5126b41205600aa841c17a6e4d77709297a8e))
+* Add support for Red Hat Enterprise Linux 10 ([e40d9f9](https://github.com/de-it-krachten/ansible-role-php/commit/e40d9f96807d54551d99c5e6e935ee73767a1de9))
+* Add support for RockyLinux 10 ([b3860d6](https://github.com/de-it-krachten/ansible-role-php/commit/b3860d633b1b585d3bf0836835608468c5cec942))
+
 # [1.7.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.6.0...v1.7.0) (2024-12-29)
 
 
