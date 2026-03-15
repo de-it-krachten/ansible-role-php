@@ -1,4 +1,4 @@
-[![CI](https://github.com/de-it-krachten/ansible-role-php/workflows/CI/badge.svg?event=push)](https://github.com/de-it-krachten/ansible-role-php/actions?query=workflow%3ACI)
+[![CI](https://github.com/de-it-krachten/php/workflows/CI/badge.svg?event=push)](https://github.com/de-it-krachten/php/actions?query=workflow%3ACI)
 
 
 # php
@@ -40,6 +40,7 @@ Supported platforms
 
 Note:
 <sup>1</sup> : no automated testing is performed on these platforms
+
 
 ## Role Variables
 ### defaults/main.yml
@@ -131,6 +132,7 @@ php_apache_service: httpd
   hosts: all
   become: 'yes'
   vars:
+    molecule_driver: '{{ lookup(''env'', ''MOLECULE_DRIVER_NAME'') }}'
     openssl_fqdn: server.example.com
     apache_fqdn: server.example.com
     apache_ssl_key: '{{ openssl_server_key }}'
