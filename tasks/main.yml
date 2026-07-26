@@ -13,5 +13,5 @@
 # Config phase
 - name: Configursation phase
   ansible.builtin.include_tasks:
-    file: config-{{ ansible_os_family }}.yml
+    file: config-{{ ansible_facts.os_family }}.yml
 
