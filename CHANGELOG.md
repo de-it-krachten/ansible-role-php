@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.8.0...v1.9.0) (2026-07-26)
+
+
+### Bug Fixes
+
+* Standarize vars.yml ([fda724a](https://github.com/de-it-krachten/ansible-role-php/commit/fda724a53fc121f179b98b3ddf67afb3a9228443))
+
+
+### Features
+
+* Add support for ansible-core 2.20+ ([1f476d1](https://github.com/de-it-krachten/ansible-role-php/commit/1f476d1a2c2ba6ba8fd01b71935b456fd992ea0b))
+* Added support for Ubuntu 26.04 LTS ([b741c41](https://github.com/de-it-krachten/ansible-role-php/commit/b741c41491ccc5bd57a4e8aed0bd66d69fbf644a))
+
 # [1.8.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.7.0...v1.8.0) (2025-08-07)
 
 
