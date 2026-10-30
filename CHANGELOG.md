@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.9.0...v1.10.0) (2026-10-30)
+
+
+### Features
+
+* Drop support for Debian 11 (Bullseye) ([1709974](https://github.com/de-it-krachten/ansible-role-php/commit/1709974a29066b2e368c1bbdd700e5c9963bdfd6))
+
 # [1.9.0](https://github.com/de-it-krachten/ansible-role-php/compare/v1.8.0...v1.9.0) (2026-07-26)
 
 
